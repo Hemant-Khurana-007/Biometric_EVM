@@ -1,8 +1,8 @@
-# Biometric EVM (Fingerprint-Based Authentication Voting System)
+# Biometric EVM (Fingerprint Based Authentication Voting System)
 
 ## Overview
 
-Biometric_EVM is a secure electronic voting system prototype that integrates biometric authentication with fingerprint based identity verification. The objective of this project is to enhance election security by preventing impersonation, duplicate voting, and improve voter mobility using biometric validation.
+Biometric EVM is a secure electronic voting system prototype that integrates biometric authentication with fingerprint based identity verification. The objective of this project is to enhance election security by preventing impersonation, duplicate voting, and improve voter mobility using biometric validation.
 ---
 
 ## Problems in Current Voting Systems
@@ -22,14 +22,14 @@ These issues reduce trust, transparency, and efficiency in the election process.
 
 ## Proposed Solution
 
-This project introduces Fingerprint-based biometric authentication before allowing a voter to cast their vote.
+This project introduces Fingerprint based biometric authentication before allowing a voter to cast their vote.
 
 ### Core Idea
 
 - Each voter’s biometric data is securely stored in R307s's buffer.
 - During voting, the voter places his finger on the fingerprint scanner.
 - The fingerprint scanner captures biometric data.
-- The system verifies the fingerprint against Aadhaar-linked data (prototype-level simulation).
+- The system verifies the fingerprint against Aadhaar linked data (prototype level simulation).
 - If verified and not already voted, access to the voting interface is granted.
 
 This ensures:
