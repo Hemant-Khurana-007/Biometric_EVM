@@ -1,11 +1,11 @@
-## Biometric EVM (Fingerprint Based Authentication Voting System)
+# Biometric EVM (Fingerprint Based Authentication Voting System)
 
-### Overview
+## Overview
 
 Biometric EVM is a secure electronic voting system prototype that integrates biometric authentication with fingerprint based identity verification. The objective of this project is to enhance election security by preventing impersonation, duplicate voting, and improve voter mobility using biometric validation.
 ---
 
-### Problems in Current Voting Systems
+## Problems in Current Voting Systems
 
 Despite improvements in electronic voting machines, several challenges still exist:
 
@@ -20,11 +20,11 @@ These issues reduce trust, transparency, and efficiency in the election process.
 
 ---
 
-### Proposed Solution
+## Proposed Solution
 
 This project introduces Fingerprint based biometric authentication before allowing a voter to cast their vote.
 
-#### Core Idea
+### Core Idea
 
 - Each voter’s biometric data is securely stored in R307s's buffer.
 - During voting, the voter places his finger on the fingerprint scanner.
@@ -41,9 +41,9 @@ This ensures:
 
 ---
 
-### System Workflow
+## System Workflow
 
-#### 1. Authenticator
+### 1. Authenticator
 
 1. Voter places his finger on the fingerprint scanner.
 2. Fingerprint is scanned.
@@ -54,7 +54,7 @@ This ensures:
 
 ---
 
-#### 2. EVM
+### 2. EVM
 1. As it recives the UART signal it fetches the partys and candidates for that particular constituency
 2. Candidate and party list appears on 1602 i2c LCD display.
 3. Party symbols appear on 0.96 inch OLED display
@@ -62,16 +62,16 @@ This ensures:
 5. It then sends a signal over USB stating the party and constituency for which the vote has been casted 
 ---
 
-#### 3. Vote Storage
+### 3. Vote Storage
 1. If it doesn't recieve anything on its USB it keeps displaying a black screen 
 2. As the voter casts his/her vote RPI zero 2 w recieves a signal over usb that states the constituency and party the voter has voted for.
 3. Votes are stored in dedicated CSV files of each constituency.
 4. Image of casted vote is displayed on 3.3 inch tft display connected to RPI zero 2 w for voter's confirmation  
 ---
 
-### Technical Architecture
+## Technical Architecture
 
-#### Hardware Components
+### Hardware Components
 
 - R307s fingerprint Sensor Module  
 - ESP32
@@ -96,26 +96,26 @@ This ensures:
 - 1 x inkpot
 ---
 
-#### Software Modules
+### Software Modules
 
-##### 1. Authenticator
+#### 1. Authenticator
 - Captures fingerprint
 - Matches biometric template
 - Returns verification status
 - Prevents duplicate voting
 
-##### 2. EVM
+#### 2. EVM
 - Displays candidate list
 - Accepts vote input
 - Confirms vote submission
 
-##### 3. VVPAT
+#### 3. VVPAT
 - Stores votes securely
 - Maintains voter status flag
 
 ---
 
-### Security Considerations
+## Security Considerations
 
 - Biometric data is encrypted before storage and only stored in R307s's buffer.
 - Identity and vote records remain separated to maintain voter anonymity.
@@ -124,7 +124,7 @@ This ensures:
 
 ---
 
-### How to Run the Project
+## How to Run the Project
 
 1. Connect hardware as shown in circuit diagram
 
@@ -143,7 +143,7 @@ This ensures:
 
 ---
 
-### Advantages
+## Advantages
 
 - Prevents impersonation
 - Eliminates duplicate voting
@@ -153,7 +153,7 @@ This ensures:
 
 ---
 
-### Future Improvements
+## Future Improvements
 
 - Integration with secure government authentication APIs  
 - Integrating a CSN A5 printer with VVPAT
@@ -161,6 +161,6 @@ This ensures:
 
 ---
 
-### Developed By
+## Developed By
 Team Multiplexers  
 Maharaja Agrasen Institute of Technology
