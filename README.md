@@ -1,4 +1,4 @@
-# Biometric EVM (Fingerprint Based Authentication Voting System)
+# Biometric EVM (Fingerprint Based Voting System)
 
 ## Overview
 
