@@ -43,32 +43,30 @@ This ensures:
 
 ## System Workflow
 
-### 1. Identity Authentication
+### 1. Authenticator
 
 1. Voter places his finger on the fingerprint scanner.
 2. Fingerprint is scanned.
 3. Biometric data is verified against stored Aadhaar-linked records.
-4. If authentication succeeds, voting access is granted.
-5. If authentication fails, access is denied.
+4. Camera verifies if the person has already voted by checking if ink is detected on voter's finger
+5. If authentication succeeds, Servo mechanism marks the finger with inedible ink and sends a UART signal to RPI pico stating the voters constituency.
+6. If authentication fails, access is denied.
 
 ---
 
-### 2. Vote Casting
-
-1. Candidate list appears on display.
-2. Voter selects preferred candidate.
-3. Vote is recorded securely.
-4. System marks voter as "Voted" to prevent duplicate voting.
-
+### 2. EVM
+1. As it recives the UART signal it fetches the partys and candidates for that particular constituency
+2. Candidate and party list appears on 1602 i2c LCD display.
+3. Party symbols appear on 0.96 inch OLED display
+4. Voter selects preferred candidate.
+5. It then sends a signal over USB stating the party and constituency for which the vote has been casted 
 ---
 
 ### 3. Vote Storage
-
-- Votes are stored in secure memory.
-- Identity data is separated from vote data.
-- A voter status flag prevents re-voting.
-- Results can be tallied after the election ends.
-
+1. If it doesn't recieve anything on its USB it keeps displaying a black screen 
+2. As the voter casts his/her vote RPI zero 2 w recieves a signal over usb that states the constituency and party the voter has voted for.
+3. Votes are stored in dedicated CSV files of each constituency.
+4. Image of casted vote is displayed on 3.3 inch tft display connected to RPI zero 2 w for voter's confirmation  
 ---
 
 ## Technical Architecture
@@ -139,7 +137,7 @@ This ensures:
 
 4. Upload the code in folders to their respective microcontroller.
 
-5. Change basepath in main.py (RPI zero 2 w) to wherever your images are stored
+5. Change basepath and votepath in main.py (RPI zero 2 w) to wherever your images are stored and wherever you want the votes to be stored
 
 6. Power on the system and begin authentication and voting process.
 
